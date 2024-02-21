@@ -1,9 +1,8 @@
 <template>
+  <router-link to="/">Home</router-link>
+  <router-link to="/about">About</router-link>
   <div :class="$style.app">
-    <h1 :class="$style.title">Counter test</h1>
-    <span>{{ counter }}</span>
-    <br>
-    <button @click="increment">increment</button>
+    <router-view />
   </div>
 </template>
 
