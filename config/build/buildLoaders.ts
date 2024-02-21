@@ -23,8 +23,21 @@ export function buildLoaders(): RuleSetRule[] {
     loader: 'vue-loader'
   }
 
+  const styleLoader = {
+    test: /\.scss$/i,
+    use: [
+      // Creates `style` nodes from JS strings
+      'vue-style-loader',
+      // Translates CSS into CommonJS
+      'css-loader',
+      // Compiles Sass to CSS
+      'sass-loader',
+    ],
+  }
+
   return [
     tsLoader,
-    vueLoader
+    vueLoader,
+    styleLoader
   ]
 }

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Counter test</h1>
+  <div class="App">
+    <h1 class="App__title">Counter test</h1>
     <span>{{ counter }}</span>
     <br>
     <button @click="increment">increment</button>
@@ -17,6 +17,13 @@ function increment() {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.App {
+  background-color: rgb(214, 255, 255);
 
+  &__title {
+    color: red;
+    font-size: 15px / 3;
+  }
+}
 </style>
