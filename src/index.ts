@@ -1,4 +1,6 @@
-import { someFn } from './test';
-someFn(2);
+import { createApp } from 'vue';
+import App from './App.vue';
 
-document.body.innerHTML = `Hello`
+const app = createApp(App);
+
+app.mount('#app');
