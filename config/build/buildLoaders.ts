@@ -27,22 +27,34 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
 
   const styleLoader = {
     test: /\.scss$/i,
-    use: [
-      isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
-      // Translates CSS into CommonJS
+    oneOf: [
       {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            localIdentName: isDev
-              ? '[path][name]__[local]--[hash:base64:5]'
-              : '[hash:base64:8]'
-          }
-        },
+        resourceQuery: /module/,
+        use: [
+          isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+          // Translates CSS into CommonJS
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: isDev
+                  ? '[path][name]__[local]--[hash:base64:5]'
+                  : '[hash:base64:8]'
+              }
+            },
+          },
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
       },
-      // Compiles Sass to CSS
-      'sass-loader',
-    ],
+      {
+        use: [
+          isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      }
+    ]
   }
 
   return [
