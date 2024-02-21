@@ -1,9 +1,14 @@
+export enum RouteName {
+  HOME = 'home',
+  ABOUT = 'about',
+}
+
 export const HomeRoute = {
   path: '/',
-  name: 'home',
+  name: RouteName.HOME,
 }
 
 export const AboutRoute = {
   path: '/about',
-  name: 'about',
+  name: RouteName.ABOUT,
 }
