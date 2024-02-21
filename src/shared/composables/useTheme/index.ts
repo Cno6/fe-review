@@ -1,6 +1,6 @@
 import { Ref, ref } from "vue"
 
-export enum Theme {
+enum Theme {
   LIGHT = 'light',
   DARK = 'dark'
 }

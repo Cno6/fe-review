@@ -2,7 +2,7 @@
   "name": "ulbitv-vue",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/app/index.ts",
   "scripts": {
     "serve": "webpack serve --env port=3000",
     "build:dev": "webpack --env mode=development",

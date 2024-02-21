@@ -3,12 +3,12 @@
     <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
     <button @click="toggleTheme">Change Theme</button>
-      <router-view />
+    <router-view />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useTheme } from '@/composables/useTheme';
+import { useTheme } from 'shared/composables';
 
 const { theme, toggleTheme } = useTheme()
 </script>

@@ -1,10 +1,9 @@
-import "@/styles/index.scss";
-
 import { createApp } from 'vue';
 
-import App from '@/App.vue';
+import "./styles/index.scss";
+import router from './router';
 
-import router from '@/app/router';
+import App from './App.vue';
 
 const app = createApp(App);
 
