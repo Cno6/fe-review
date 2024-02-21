@@ -2,6 +2,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import { DefinePlugin, ProgressPlugin, WebpackPluginInstance } from "webpack";
 import { BuildOptions } from "./types/config";
 import { VueLoaderPlugin } from 'vue-loader'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 export function buildPlugins({ paths }: BuildOptions): WebpackPluginInstance[] {
   return [
@@ -14,6 +15,9 @@ export function buildPlugins({ paths }: BuildOptions): WebpackPluginInstance[] {
       __VUE_PROD_DEVTOOLS__: 'false',
       __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false'
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash:8].css',
+    })
   ]
 }
