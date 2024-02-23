@@ -1,13 +1,13 @@
 <template>
   <div class="app" :class="theme">
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <button @click="toggleTheme">Change Theme</button>
+    <navbar />
     <router-view />
+    <button @click="toggleTheme">Change Theme</button>
   </div>
 </template>
 
 <script setup lang="ts">
+import Navbar from 'widgets/Navbar';
 import { useTheme } from 'shared/composables';
 
 const { theme, toggleTheme } = useTheme()

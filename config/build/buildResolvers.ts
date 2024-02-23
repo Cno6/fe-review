@@ -5,7 +5,7 @@ export function buildResolvers({ paths }: BuildOptions): ResolveOptions {
   return {
     extensions: ['.tsx', '.ts', '.js', '.vue'],
     preferAbsolute: true,
-    modules: ['node_modules', paths.src],
+    modules: [paths.src, 'node_modules'],
     mainFiles: ['index'],
     alias: {
       /** 
