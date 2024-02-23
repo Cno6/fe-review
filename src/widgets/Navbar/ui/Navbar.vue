@@ -1,5 +1,6 @@
 <template>
   <div :class="$style.navbar">
+    <theme-switcher />
     <div :class="$style.links">
       <app-link to="/">Home</app-link>
       <app-link to="/about">About</app-link>
@@ -8,13 +9,13 @@
 </template>
 
 <script setup lang="ts">
-import AppLink from 'shared/ui'
+import { AppLink } from 'shared/ui'
+import { ThemeSwitcher } from 'shared/ui';
 </script>
 
 <style lang="scss" module>
 .navbar {
   width: 100%;
-  height: var(--navbar-height);
   background-color: var(--inverted-bg-color);
   display: flex;
   align-items: center;

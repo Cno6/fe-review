@@ -1,8 +1,9 @@
 import { RuleSetRule } from "webpack";
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { BuildOptions } from "./types/config";
+import path from "path";
 
-export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+export function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRule[] {
   const tsLoader: RuleSetRule = {
     test: /\.tsx?$/,
     loader: 'ts-loader',
@@ -57,7 +58,16 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     ]
   }
 
+  const svgLoader = {
+    test: /\.svg$/,
+    use: [
+      'vue-loader',
+      path.resolve(paths.customLoaders, 'vue-svg-loader.ts')
+    ],
+  }
+
   return [
+    svgLoader,
     tsLoader,
     vueLoader,
     styleLoader

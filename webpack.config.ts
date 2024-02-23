@@ -9,7 +9,8 @@ export default (env: BuildEnv) => {
     entry: path.resolve(__dirname, 'src', 'app', 'index.ts'),
     build: path.resolve(__dirname, 'build'),
     html: path.resolve(__dirname, 'public', 'index.html'),
-    src: path.resolve(__dirname, 'src')
+    src: path.resolve(__dirname, 'src'),
+    customLoaders: path.resolve(__dirname, 'config', 'build', 'loaders')
   }
 
   const mode = env.mode || 'development';

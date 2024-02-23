@@ -5,6 +5,7 @@ export interface BuildPaths {
   build: string;
   html: string;
   src: string;
+  customLoaders: string,
 }
 
 export interface BuildEnv {

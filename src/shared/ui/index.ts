@@ -1,2 +1,3 @@
-export { default } from './AppLink/AppLink.vue'
-export { AppLinkTheme } from './AppLink/AppLink.types'
+export { default as AppLink } from './AppLink'
+export { default as ThemeSwitcher } from './ThemeSwitcher'
+export { default as AppButton } from './AppButton'
