@@ -6,15 +6,16 @@ enum Theme {
 }
 
 interface useTheme {
-  theme: Ref<Theme>
+  readonly theme: Ref<Theme>
   toggleTheme: () => void
 }
 
+const LOCAL_STORAGE_THEME_KEY = 'theme'
+
 const defaultTheme = getLocalStorageTheme() ?? Theme.LIGHT
+const theme = ref(defaultTheme)
 
 export function useTheme(): useTheme {
-  const theme = ref(defaultTheme)
-
   const toggleTheme = () => {
     theme.value = theme.value === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
 
@@ -26,8 +27,6 @@ export function useTheme(): useTheme {
     toggleTheme
   }
 }
-
-const LOCAL_STORAGE_THEME_KEY = 'theme'
 
 function getLocalStorageTheme(): Theme | null {
   return window.localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme
