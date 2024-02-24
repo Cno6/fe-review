@@ -18,4 +18,10 @@ module.exports = antfu(
       }],
     },
   },
+  {
+    rules: {
+      'no-console': __IS_DEV__ ? 'warn' : 'error',
+      'no-debugger': __IS_DEV__ ? 'warn' : 'error',
+    },
+  },
 )
