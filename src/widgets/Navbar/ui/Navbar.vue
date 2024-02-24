@@ -1,16 +1,14 @@
 <template>
-  <div :class="$style.navbar">
-    <theme-switcher />
-    <div :class="$style.links">
+  <header :class="$style.navbar">
+    <nav :class="$style.links">
       <app-link to="/">Home</app-link>
       <app-link to="/about">About</app-link>
-    </div>
-  </div>
+    </nav>
+  </header>
 </template>
 
 <script setup lang="ts">
 import { AppLink } from 'shared/ui'
-import ThemeSwitcher from 'features/ThemeSwitcher';
 </script>
 
 <style lang="scss" module>
