@@ -20,3 +20,4 @@ declare module "*.svg" {
   export default component;
 }
 
+declare const __IS_DEV__: boolean;

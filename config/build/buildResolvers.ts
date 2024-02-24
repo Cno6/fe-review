@@ -15,6 +15,7 @@ export function buildResolvers({ paths }: BuildOptions): ResolveOptions {
        * @url https://james.pawsforthorpe.co.uk/posts/2022/02/webpack-typescript-vue.html
       */
       'vue': 'vue/dist/vue.esm-bundler.js',
+      // 'vue-i18n': 'vue-i18n/dist/vue-i18n.esm-bundler.js'
     }
   }
 }

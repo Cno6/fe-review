@@ -1,18 +1,26 @@
 <template>
   <div :class="[$style.sidebar, { [$style.collapsed]: collapsed }]">
-    <button @click="toggle">toggle</button>
+    <button @click="toggle">{{ $t('toggle') }}</button>
     <theme-switcher />
+    <button @click="toggleLanguage">{{ locale }}</button>
   </div>
 </template>
 
 <script setup lang="ts">
 import ThemeSwitcher from 'features/ThemeSwitcher';
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 
 const collapsed = ref(false);
 
+const { locale } = useI18n();
+
 function toggle() {
   collapsed.value = !collapsed.value;
+}
+
+function toggleLanguage() {
+  locale.value = locale.value === 'en' ? 'ru' : 'en';
 }
 </script>
 

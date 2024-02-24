@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 :class="$style.title">About Page</h1>
+    <h1 :class="$style.title">{{ $t('about-page') }}</h1>
   </div>
 </template>
 
