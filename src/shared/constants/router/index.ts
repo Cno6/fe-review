@@ -1,4 +1,4 @@
-export enum RouteName {
+enum RouteName {
   HOME = 'home',
   ABOUT = 'about',
 }

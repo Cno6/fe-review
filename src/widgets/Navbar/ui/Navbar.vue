@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import { AppLink } from 'shared/ui'
-import { ThemeSwitcher } from 'shared/ui';
+import ThemeSwitcher from 'features/ThemeSwitcher';
 </script>
 
 <style lang="scss" module>
