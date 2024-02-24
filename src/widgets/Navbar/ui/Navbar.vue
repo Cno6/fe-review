@@ -1,8 +1,12 @@
 <template>
   <header :class="$style.navbar">
     <nav :class="$style.links">
-      <app-link to="/">{{ $t('home') }}</app-link>
-      <app-link to="/about">{{ $t('about') }}</app-link>
+      <AppLink to="/">
+        {{ $t('home') }}
+      </AppLink>
+      <AppLink to="/about">
+        {{ $t('about') }}
+      </AppLink>
     </nav>
   </header>
 </template>

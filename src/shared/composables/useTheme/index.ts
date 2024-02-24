@@ -1,12 +1,12 @@
-import { ref } from "vue"
-import type { Ref } from "vue"
+import { ref } from 'vue'
+import type { Ref } from 'vue'
 
 export enum Theme {
   LIGHT = 'light',
-  DARK = 'dark'
+  DARK = 'dark',
 }
 
-interface useTheme {
+interface IUseTheme {
   readonly theme: Ref<Theme>
   toggleTheme: () => void
 }
@@ -16,7 +16,7 @@ const LOCAL_STORAGE_THEME_KEY = 'theme'
 const defaultTheme = getLocalStorageTheme() ?? Theme.LIGHT
 const theme = ref(defaultTheme)
 
-export function useTheme(): useTheme {
+export function useTheme(): IUseTheme {
   const toggleTheme = () => {
     theme.value = theme.value === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
 
@@ -25,7 +25,7 @@ export function useTheme(): useTheme {
 
   return {
     theme,
-    toggleTheme
+    toggleTheme,
   }
 }
 

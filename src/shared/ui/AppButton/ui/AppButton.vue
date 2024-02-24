@@ -6,8 +6,8 @@
 
 <script setup lang="ts">
 interface AppButtonTheme {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
+  PRIMARY: 'primary'
+  SECONDARY: 'secondary'
   ICON: 'icon'
 }
 
@@ -15,9 +15,9 @@ interface AppButtonProps {
   theme?: AppButtonTheme[keyof AppButtonTheme]
 }
 
-const $props = defineProps<AppButtonProps>();
+const $props = defineProps<AppButtonProps>()
 
-const theme = $props.theme ?? 'primary';
+const theme = $props.theme ?? 'primary'
 </script>
 
 <style lang="scss" module>

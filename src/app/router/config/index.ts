@@ -1,12 +1,12 @@
-import { HomeRoute, AboutRoute } from 'shared/constants/router'
+import { AboutRoute, HomeRoute } from 'shared/constants/router'
 
 export default [
   {
     ...HomeRoute,
-    component: () => import('pages/Home')
+    component: () => import('pages/Home'),
   },
   {
     ...AboutRoute,
-    component: () => import('pages/About')
-  }
+    component: () => import('pages/About'),
+  },
 ]

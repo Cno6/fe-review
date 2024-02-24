@@ -4,5 +4,5 @@ export const FALLBACK_LOCALE = 'ru'
 
 export const AVAILABLE_LOCALES = [
   'ru',
-  'en'
+  'en',
 ]

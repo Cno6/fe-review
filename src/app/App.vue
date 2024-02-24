@@ -9,9 +9,9 @@
 </template>
 
 <script setup lang="ts">
-import Navbar from 'widgets/Navbar';
-import Sidebar from 'widgets/Sidebar';
-import { useTheme } from 'shared/composables';
+import Navbar from 'widgets/Navbar'
+import Sidebar from 'widgets/Sidebar'
+import { useTheme } from 'shared/composables'
 
 const { theme } = useTheme()
 </script>

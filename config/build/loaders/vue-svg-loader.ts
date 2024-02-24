@@ -1,3 +1,3 @@
-module.exports = function (source: string) {
-  return `<template>\n${source}\n</template>`;
-};
+export default function (source: string) {
+  return `<template>\n${source}\n</template>`
+}

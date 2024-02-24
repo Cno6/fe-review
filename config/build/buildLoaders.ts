@@ -1,7 +1,7 @@
-import { RuleSetRule } from "webpack";
+import path from 'node:path'
+import type { RuleSetRule } from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
-import { BuildOptions } from "./types/config";
-import path from "path";
+import type { BuildOptions } from './types/config'
 
 export function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRule[] {
   const tsLoader: RuleSetRule = {
@@ -10,20 +10,20 @@ export function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRule[] {
     exclude: /node_modules/,
     options: {
       /**
-       * Используется для указания шаблона регулярного выражения, 
-       * который сопоставляет пути к файлам, 
-       * где файлы TypeScript (`.ts` или `.tsx`) 
-       * должны рассматриваться так, как будто они имеют расширение `.vue`. 
-       * Это полезно при работе с однофайловым форматом компонентов `.vue` 
+       * Используется для указания шаблона регулярного выражения,
+       * который сопоставляет пути к файлам,
+       * где файлы TypeScript (`.ts` или `.tsx`)
+       * должны рассматриваться так, как будто они имеют расширение `.vue`.
+       * Это полезно при работе с однофайловым форматом компонентов `.vue`
        * в проекте TypeScript.
        */
       appendTsSuffixTo: [/\.vue$/],
-    }
+    },
   }
 
   const vueLoader = {
     test: /\.vue$/,
-    loader: 'vue-loader'
+    loader: 'vue-loader',
   }
 
   const styleLoader = {
@@ -40,8 +40,8 @@ export function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRule[] {
               modules: {
                 localIdentName: isDev
                   ? '[path][name]__[local]--[hash:base64:5]'
-                  : '[hash:base64:8]'
-              }
+                  : '[hash:base64:8]',
+              },
             },
           },
           // Compiles Sass to CSS
@@ -54,15 +54,15 @@ export function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRule[] {
           'css-loader',
           'sass-loader',
         ],
-      }
-    ]
+      },
+    ],
   }
 
   const svgLoader = {
     test: /\.svg$/,
     use: [
       'vue-loader',
-      path.resolve(paths.customLoaders, 'vue-svg-loader.ts')
+      path.resolve(paths.customLoaders, 'vue-svg-loader.ts'),
     ],
   }
 
@@ -70,6 +70,6 @@ export function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRule[] {
     svgLoader,
     tsLoader,
     vueLoader,
-    styleLoader
+    styleLoader,
   ]
 }

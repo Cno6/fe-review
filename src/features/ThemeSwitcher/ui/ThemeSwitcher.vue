@@ -1,15 +1,15 @@
 <template>
   <div>
-    <app-button theme="icon" @click="toggleTheme">
+    <AppButton theme="icon" @click="toggleTheme">
       <LightThemeIcon v-if="theme === Theme.LIGHT" />
       <DarkThemeIcon v-else />
-    </app-button>
+    </AppButton>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useTheme, Theme } from 'shared/composables';
-import { LightThemeIcon, DarkThemeIcon } from 'shared/assets';
+import { Theme, useTheme } from 'shared/composables'
+import { DarkThemeIcon, LightThemeIcon } from 'shared/assets'
 import { AppButton } from 'shared/ui'
 
 const { theme, toggleTheme } = useTheme()
