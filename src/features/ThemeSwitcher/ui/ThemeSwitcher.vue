@@ -1,8 +1,10 @@
 <template>
-  <app-button :class="$style.theme_switcher" theme="icon" @click="toggleTheme">
-    <LightThemeIcon v-if="theme === Theme.LIGHT" />
-    <DarkThemeIcon v-else />
-  </app-button>
+  <div :class="$style.parent_component">
+    <app-button :class="$style.theme_switcher" theme="icon" @click="toggleTheme">
+      <LightThemeIcon v-if="theme === Theme.LIGHT" />
+      <DarkThemeIcon v-else />
+    </app-button>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -14,8 +16,9 @@ const { theme, toggleTheme } = useTheme()
 </script>
 
 <style lang="scss" module>
-// TODO: проблема переопределения стилей из родительского компонента.
-.theme_switcher {
-  background-color: red;
+.parent_component {
+  .theme_switcher {
+    background-color: rgb(black, 0.2);
+  }
 }
 </style>
