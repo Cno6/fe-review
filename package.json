@@ -1,6 +1,6 @@
 {
   "name": "fe-review-vue",
-  "type": "module",
+  "type": "commonjs",
   "version": "1.0.0",
   "description": "",
   "author": "@Cno6 (vad.igumnov@gmail.com)",
