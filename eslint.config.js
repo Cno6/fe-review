@@ -1,3 +1,4 @@
+const process = require('node:process')
 const antfu = require('@antfu/eslint-config').default
 
 module.exports = antfu(
@@ -20,8 +21,8 @@ module.exports = antfu(
   },
   {
     rules: {
-      'no-console': __IS_DEV__ ? 'warn' : 'error',
-      'no-debugger': __IS_DEV__ ? 'warn' : 'error',
+      'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'error',
+      'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'error',
     },
   },
 )

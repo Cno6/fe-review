@@ -14,6 +14,3 @@ import { AppButton } from 'shared/ui'
 
 const { theme, toggleTheme } = useTheme()
 </script>
-
-<style lang="scss" module>
-</style>

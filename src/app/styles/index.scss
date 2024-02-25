@@ -4,12 +4,12 @@
 @import "themes/light";
 
 .app {
-  font: var(--font-m);
-  
-  color: var(--primary-color);
-  background-color: var(--bg-color);
-
   min-height: 100vh;
+
+  font: var(--font-m);
+  color: var(--primary-color);
+
+  background-color: var(--bg-color);
 
   transition: color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;

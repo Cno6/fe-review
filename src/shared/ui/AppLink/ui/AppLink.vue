@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="$props.to" :class="[$style.app_link, $style[theme]]">
+  <router-link :to="$props.to" :class="[$style[theme]]">
     <slot />
   </router-link>
 </template>
@@ -22,8 +22,6 @@ const theme = $props.theme ?? AppLinkTheme.PRIMARY
 </script>
 
 <style lang="scss" module>
-.app_link {}
-
 .primary {
   color: var(--inverted-primary-color);
 }

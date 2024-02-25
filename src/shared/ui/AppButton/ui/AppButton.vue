@@ -26,11 +26,13 @@ const theme = $props.theme ?? 'primary'
 }
 
 .icon {
-  padding: 0;
   margin: 0;
-  border: none;
-  background: none;
-  outline: none;
+  padding: 0;
+
   line-height: 0;
+
+  background: none;
+  border: none;
+  outline: none;
 }
 </style>

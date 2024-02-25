@@ -28,7 +28,7 @@ const { theme } = useTheme()
 }
 
 .content {
-  padding: 20px;
   flex-grow: 1;
+  padding: 20px;
 }
 </style>

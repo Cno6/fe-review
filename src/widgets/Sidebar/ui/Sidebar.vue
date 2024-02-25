@@ -30,14 +30,17 @@ function toggleLanguage() {
 
 <style lang="scss" module>
 .sidebar {
-  padding: 20px;
-  background-color: var(--inverted-bg-color);
-  min-width: 300px;
-  transition: min-width .3s ease-out;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  flex-direction: column;
+
+  min-width: 300px;
+  padding: 20px;
+
+  background-color: var(--inverted-bg-color);
+
+  transition: min-width .3s ease-out;
 }
 
 .collapsed {

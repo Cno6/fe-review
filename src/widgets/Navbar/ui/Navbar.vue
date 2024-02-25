@@ -17,11 +17,13 @@ import { AppLink } from 'shared/ui'
 
 <style lang="scss" module>
 .navbar {
-  width: 100%;
-  background-color: var(--inverted-bg-color);
   display: flex;
   align-items: center;
+
+  width: 100%;
   padding: 20px;
+
+  background-color: var(--inverted-bg-color);
 }
 
 .links {

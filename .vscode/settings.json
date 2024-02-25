@@ -69,5 +69,9 @@
     "jsonc",
     "yaml",
     "toml"
+  ],
+  "stylelint.validate": [
+    "scss",
+    "vue"
   ]
 }
