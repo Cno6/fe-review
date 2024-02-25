@@ -23,6 +23,7 @@
   - Webpack 5 - конфигурация с нуля.
 - Линтинг:
   - Eslint + @antfu/eslint-config
+  - Stylelint
   - lint-staged + simple-git-hooks
 - Архитектура:
   - Feature-Sliced Design
@@ -30,3 +31,4 @@
 ## TODO:
 1. Попробовать [typesafe-i18n](https://github.com/ivanhofer/typesafe-i18n/tree/main/packages/adapter-vue) вместо `vue i18n`.
 2. Lazy loading файлов локализации разбитых на чанки по языку и модулям.
+3. eslint-plugin-vue-i18n
