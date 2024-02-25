@@ -25,6 +25,8 @@
   - Eslint + @antfu/eslint-config
   - Stylelint
   - lint-staged + simple-git-hooks
+- Тестирование:
+  - Jest
 - Архитектура:
   - Feature-Sliced Design
 

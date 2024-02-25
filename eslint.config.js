@@ -1,5 +1,8 @@
 const process = require('node:process')
 const antfu = require('@antfu/eslint-config').default
+const { FlatCompat } = require('@eslint/eslintrc')
+
+const compat = new FlatCompat()
 
 module.exports = antfu(
   {
@@ -25,4 +28,9 @@ module.exports = antfu(
       'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'error',
     },
   },
+  ...compat.config({
+    env: {
+      jest: true,
+    },
+  }),
 )
