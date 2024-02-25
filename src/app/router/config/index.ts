@@ -1,4 +1,4 @@
-import { AboutRoute, HomeRoute } from 'shared/constants/router'
+import { AboutRoute, HomeRoute, NotFoundRoute } from 'shared/constants/router'
 
 export default [
   {
@@ -8,5 +8,9 @@ export default [
   {
     ...AboutRoute,
     component: () => import('pages/About'),
+  },
+  {
+    ...NotFoundRoute,
+    component: () => import('pages/NotFound'),
   },
 ]
