@@ -25,6 +25,14 @@ const theme = $props.theme ?? 'primary'
   cursor: pointer;
 }
 
+.primary {
+  color: var(--inverted-primary-color);
+}
+
+.secondary {
+  color: var(--inverted-secondary-color);
+}
+
 .icon {
   margin: 0;
   padding: 0;
