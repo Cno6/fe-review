@@ -3,6 +3,7 @@ import type { WebpackPluginInstance } from 'webpack'
 import { DefinePlugin, ProgressPlugin } from 'webpack'
 import { VueLoaderPlugin } from 'vue-loader'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import type { BuildOptions } from './types/config'
 
 export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInstance[] {
@@ -20,6 +21,9 @@ export function buildPlugins({ paths, isDev }: BuildOptions): WebpackPluginInsta
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css',
+    }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
     }),
   ]
 }

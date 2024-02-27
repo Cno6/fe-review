@@ -11,6 +11,8 @@ module.exports = antfu(
       tsconfigPath: './tsconfig.json',
       overrides: {
         '@typescript-eslint/no-redeclare': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
       },
     },
   },
