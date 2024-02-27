@@ -11,7 +11,8 @@
   // Auto fix
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+    "source.organizeImports": "never",
+    "source.fixAll.stylelint": "always"
   },
   // Silent the stylistic rules in you IDE, but still auto fix them
   "eslint.rules.customizations": [
@@ -74,5 +75,6 @@
     "scss",
     "vue"
   ],
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "stylelint.configFile": "./.stylelintrc.json"
 }
