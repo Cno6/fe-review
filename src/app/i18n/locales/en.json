@@ -3,5 +3,7 @@
   "home-page": "Main page",
   "about": "About Us",
   "home": "Home",
-  "toggle": "Switch"
+  "toggle": "Switch",
+  "error-boundary": "An error has occurred",
+  "reload-page": "Refresh the page"
 }
