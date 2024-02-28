@@ -1,18 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
-import AppButton from './AppButton.vue'
+import AppLink from './AppLink.vue'
 
 const meta = {
-  title: 'shared/Button',
-  component: AppButton,
+  title: 'shared/AppLink',
+  component: AppLink,
   tags: ['autodocs'],
   argTypes: {
-    theme: { control: 'select', options: ['primary', 'secondary', 'icon'] },
+    theme: {
+      control: 'select',
+      options: ['primary', 'secondary'],
+      description: 'Theme of the link',
+    },
   },
   args: {
     default: 'Click me',
+    to: '#',
   },
-} satisfies Meta<typeof AppButton>
+} satisfies Meta<typeof AppLink>
 
 export default meta
 type Story = StoryObj<typeof meta>
@@ -26,11 +31,5 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     theme: 'secondary',
-  },
-}
-
-export const Icon: Story = {
-  args: {
-    theme: 'icon',
   },
 }

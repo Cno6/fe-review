@@ -1,5 +1,6 @@
 import path from 'node:path'
 import type { StorybookConfig } from '@storybook/vue3-webpack5'
+import type { RuleSetRule } from 'webpack'
 import buildStyleLoader from '../build/loaders/style-loader'
 
 const config: StorybookConfig = {
@@ -21,7 +22,21 @@ const config: StorybookConfig = {
   webpackFinal: async (config) => {
     config.resolve.modules = [path.resolve(__dirname, '..', '..', 'src'), 'node_modules']
     config.resolve.extensions.push('.ts', '.vue')
-    config.module.rules.push(buildStyleLoader(true))
+    const fileLoaderRule = config.module.rules.find((rule: RuleSetRule) => rule.test instanceof RegExp && rule.test.test('.svg'))
+
+    if (fileLoaderRule)
+      (fileLoaderRule as RuleSetRule).exclude = /\.svg$/
+
+    config.module.rules.push(
+      buildStyleLoader(true),
+      {
+        test: /\.svg$/,
+        use: [
+          'vue-loader',
+          path.resolve(__dirname, '..', 'build', 'loaders', 'vue-svg-loader.ts'),
+        ],
+      },
+    )
 
     return config
   },

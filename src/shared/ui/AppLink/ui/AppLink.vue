@@ -7,18 +7,18 @@
 <script setup lang="ts">
 import type { RouterLinkProps } from 'vue-router'
 
-const $props = defineProps<AppLinkProps>()
-
-enum AppLinkTheme {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
+export interface AppLinkTheme {
+  PRIMARY: 'primary'
+  SECONDARY: 'secondary'
 }
 
 export interface AppLinkProps extends RouterLinkProps {
-  theme?: AppLinkTheme
+  theme?: AppLinkTheme[keyof AppLinkTheme]
 }
 
-const theme = $props.theme ?? AppLinkTheme.PRIMARY
+const $props = defineProps<AppLinkProps>()
+
+const theme = $props.theme ?? 'primary'
 </script>
 
 <style lang="scss" module>

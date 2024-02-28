@@ -79,7 +79,7 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "*.{ts,vue}": "npm run lint:script",
-    "*.{css,scss,vue}": "npm run lint:style"
+    "*.{ts,vue}": "npm run lint:fix:script",
+    "*.{css,scss,vue}": "npm run lint:fix:style"
   }
 }

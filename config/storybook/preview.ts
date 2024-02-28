@@ -3,6 +3,7 @@ import type { Preview } from '@storybook/vue3'
 import 'app/styles/index.scss'
 import { Theme } from 'shared/composables/useTheme'
 import ThemeDecorator from './decorators/theme-decorator'
+import VueDecorator from './decorators/vue-decorator'
 
 const preview: Preview = {
   globalTypes: {
@@ -33,6 +34,7 @@ const preview: Preview = {
   },
   decorators: [
     ThemeDecorator(),
+    VueDecorator(),
   ],
 }
 
