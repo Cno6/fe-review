@@ -17,7 +17,9 @@
     "lint:fix:style": "npx stylelint src/**/*.{css,scss,vue} --fix",
     "lint": "npm run lint:script && npm run lint:style",
     "lint:fix": "npm run lint:fix:script && npm run lint:fix:style",
-    "test": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:ui": "npx loki test",
+    "test:ui:ok": "npx loki approve",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "build-storybook": "storybook build -c ./config/storybook"
   },
@@ -52,6 +54,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-environment-jsdom-global": "^4.0.0",
     "lint-staged": "^15.2.2",
+    "loki": "^0.34.0",
     "mini-css-extract-plugin": "^2.8.0",
     "postcss-html": "^1.6.0",
     "sass": "^1.71.1",
@@ -81,5 +84,20 @@
   "lint-staged": {
     "*.{ts,vue}": "npm run lint:fix:script",
     "*.{css,scss,vue}": "npm run lint:fix:style"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.docker",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }
