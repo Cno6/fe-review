@@ -10,29 +10,37 @@
 
 На текущий момент стек используемых технологий и подходов следующий. В процессе некоторые библиотеки могут меняться, для расширения опыта и кругозора.
 
-- Язык:
+- **Язык**:
   - Typescript
-- Фреймворк и экосистема:
+- **Фреймворк и экосистема**:
   - Vue 3
   - Vue Router
   - Vue i18n
-- CSS:
+- **CSS**:
   - CSS Modules
   - Sass (Scss)
-- Сборка:
+- **Сборка**:
   - Webpack 5 - конфигурация с нуля.
-- Линтинг:
+- **Линтинг**:
   - Eslint + @antfu/eslint-config
   - Stylelint
   - lint-staged + simple-git-hooks
-- Тестирование:
-  - Jest + Babel + TS Jest + Vue Jest
-  - Vue Test Utils
-- Архитектура:
+- **Тестирование**:
+  - Unit: Jest (TS Jest, Vue Jest) + Vue Test Utils
+  - UI: Loki + Storybook
+- **Архитектура**:
   - Feature-Sliced Design
+  - Github Actions (CI)
 
 ## TODO:
-1. Попробовать [typesafe-i18n](https://github.com/ivanhofer/typesafe-i18n/tree/main/packages/adapter-vue) вместо `vue i18n`.
-2. Lazy loading файлов локализации разбитых на чанки по языку и модулям.
-3. eslint-plugin-vue-i18n
-4. Разобраться как правильно мокать переводы
+1. Локализация:
+  1. Попробовать [typesafe-i18n](https://github.com/ivanhofer/typesafe-i18n/tree/main/packages/adapter-vue) вместо `vue i18n`.
+  2. Lazy loading файлов локализации разбитых на чанки по языку и модулям.
+  3. eslint-plugin-vue-i18n
+2. Текстирование
+  1. Разобраться как правильно мокать переводы
+3. Typescript
+  1. Детальнее изучить правильную работу Vue 3 с Typescript
+  2. Вернуть `"noImplicitAny": true` в `tsconfig` и разобраться с проблемой типа any в динамическом компоненте в `App.vue`
+4. Storybook:
+  1. Подумать как сделать так, чтобы `Sidebar` соответствовал внешнему представлению на странице (*предположительно завести лайауты и использовать их в сторис*).
