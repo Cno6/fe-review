@@ -9,12 +9,15 @@ module.exports = antfu(
     vue: true,
     typescript: {
       tsconfigPath: './tsconfig.json',
-      overrides: {
+      rules: {
         '@typescript-eslint/no-redeclare': 'off',
         '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/no-unsafe-return': 'off',
       },
     },
+    ignores: [
+      '!.storybook',
+    ],
   },
   {
     files: ['**/*.vue'],
@@ -34,5 +37,8 @@ module.exports = antfu(
     env: {
       jest: true,
     },
+    extends: [
+      'plugin:storybook/recommended',
+    ],
   }),
 )

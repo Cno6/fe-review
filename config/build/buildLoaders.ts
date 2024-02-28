@@ -1,7 +1,7 @@
 import path from 'node:path'
 import type { RuleSetRule } from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import type { BuildOptions } from './types/config'
+import buildStyleLoader from './loaders/style-loader'
 
 export function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRule[] {
   const tsLoader: RuleSetRule = {
@@ -26,37 +26,7 @@ export function buildLoaders({ isDev, paths }: BuildOptions): RuleSetRule[] {
     loader: 'vue-loader',
   }
 
-  const styleLoader = {
-    test: /\.scss$/i,
-    oneOf: [
-      {
-        resourceQuery: /module/,
-        use: [
-          isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
-          // Translates CSS into CommonJS
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                localIdentName: isDev
-                  ? '[path][name]__[local]--[hash:base64:5]'
-                  : '[hash:base64:8]',
-              },
-            },
-          },
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
-      },
-      {
-        use: [
-          isDev ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-    ],
-  }
+  const styleLoader = buildStyleLoader(isDev)
 
   const svgLoader = {
     test: /\.svg$/,

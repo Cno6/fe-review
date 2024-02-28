@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-interface AppButtonTheme {
+export interface AppButtonTheme {
   PRIMARY: 'primary'
   SECONDARY: 'secondary'
   ICON: 'icon'

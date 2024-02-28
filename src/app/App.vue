@@ -27,6 +27,7 @@ import Sidebar from 'widgets/Sidebar'
 import AppLoader from 'shared/ui/AppLoader'
 import { useTheme } from 'shared/composables'
 import ErrorBoundary from './providers/ErrorBoundary'
+import './styles/index.scss'
 
 const { theme } = useTheme()
 </script>
