@@ -25,6 +25,11 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    slots: {
+      default: {
+        description: 'Default slot content',
+      },
+    },
   },
   decorators: [
     ThemeDecorator(),

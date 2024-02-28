@@ -8,7 +8,7 @@ export default function ThemeDecorator(): Decorator {
     return {
       components: { story },
       template: `
-        <div class="app ${theme}">
+        <div class="${theme}">
           <story />
         </div>
       `,

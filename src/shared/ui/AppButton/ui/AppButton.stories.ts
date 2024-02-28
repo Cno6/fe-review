@@ -9,15 +9,9 @@ const meta = {
   argTypes: {
     theme: { control: 'select', options: ['primary', 'secondary', 'icon'] },
   },
-  parameters: {
-    slots: {
-      default: {
-        description: 'Text inside button',
-        template: 'Some Text',
-      },
-    },
+  args: {
+    default: 'Click me',
   },
-
 } satisfies Meta<typeof AppButton>
 
 export default meta
