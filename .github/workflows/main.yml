@@ -24,9 +24,13 @@ jobs:
         run: npm run build:prod
       - name: scripts linting
         run: npm run lint:script
+        if: always()
       - name: styles linting
         run: npm run lint:style
+        if: always()
       - name: unit testing
         run: npm run test:unit
+        if: always()
       - name: ui testing
         run: npm run storybook:build && npm run test:ui:ci
+        if: always()

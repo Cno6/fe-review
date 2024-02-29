@@ -76,5 +76,11 @@
     "vue"
   ],
   "eslint.format.enable": true,
-  "stylelint.configFile": "./.stylelintrc.json"
+  "stylelint.configFile": "./.stylelintrc.json",
+  "testing.openTesting": "neverOpen",
+  "jest.outputConfig": {
+    "revealOn": "run",
+    "revealWithFocus": "none",
+    "clearOnRun": "none"
+  }
 }

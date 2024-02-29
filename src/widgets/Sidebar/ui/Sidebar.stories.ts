@@ -11,4 +11,15 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Base: Story = { }
+export const Base: Story = {
+  render: () => {
+    return {
+      components: { Sidebar },
+      template: `
+      <div style="display: flex; width: 100%; height: 100vh;">
+        <Sidebar />
+        <div style="flex-grow: 1;"></div>
+      </div>`,
+    }
+  },
+}

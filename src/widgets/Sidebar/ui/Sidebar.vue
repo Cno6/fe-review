@@ -1,17 +1,18 @@
 <template>
   <div :class="[$style.sidebar, { [$style.collapsed]: collapsed }]">
-    <button @click="toggle">
-      {{ $t('toggle') }}
-    </button>
+    <AppButton :class="$style.toggle" theme="filled" @click="toggle">
+      {{ collapsed ? '>' : '<' }}
+    </AppButton>
     <ThemeSwitcher />
-    <button @click="toggleLanguage">
+    <AppButton @click="toggleLanguage">
       {{ locale }}
-    </button>
+    </AppButton>
   </div>
 </template>
 
 <script setup lang="ts">
 import ThemeSwitcher from 'features/ThemeSwitcher'
+import { AppButton } from 'shared/ui'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 
@@ -30,10 +31,12 @@ function toggleLanguage() {
 
 <style lang="scss" module>
 .sidebar {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   min-width: 300px;
   padding: 20px;
@@ -41,6 +44,13 @@ function toggleLanguage() {
   background-color: var(--inverted-bg-color);
 
   transition: min-width .3s ease-out;
+}
+
+.toggle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
 }
 
 .collapsed {

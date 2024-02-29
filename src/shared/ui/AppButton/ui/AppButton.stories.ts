@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 
+import { DarkThemeIcon } from 'shared/assets'
 import AppButton from './AppButton.vue'
 
 const meta = {
@@ -7,7 +8,7 @@ const meta = {
   component: AppButton,
   tags: ['autodocs'],
   argTypes: {
-    theme: { control: 'select', options: ['primary', 'secondary', 'icon'] },
+    theme: { control: 'select', options: ['primary', 'secondary', 'icon', 'filled'] },
   },
   args: {
     default: 'Click me',
@@ -16,6 +17,8 @@ const meta = {
 
 export default meta
 type Story = StoryObj<typeof meta>
+
+export const Default: Story = { }
 
 export const Primary: Story = {
   args: {
@@ -29,8 +32,22 @@ export const Secondary: Story = {
   },
 }
 
+export const Filled: Story = {
+  args: {
+    theme: 'filled',
+  },
+}
+
 export const Icon: Story = {
   args: {
     theme: 'icon',
+  },
+  parameters: {
+    slots: {
+      default: {
+        components: { DarkThemeIcon },
+        template: '<DarkThemeIcon />',
+      },
+    },
   },
 }
