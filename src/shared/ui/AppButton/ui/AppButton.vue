@@ -26,7 +26,10 @@ const theme = $props.theme
 <style lang="scss" module>
 .app_button {
   cursor: pointer;
+  user-select: none;
+
   padding: 4px 8px;
+
   border: none;
   outline: none;
 }

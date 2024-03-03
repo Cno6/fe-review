@@ -1,5 +1,5 @@
 <template>
-  <div class="app" :class="[$style.app, theme]">
+  <div :class="[$style.app]">
     <Navbar :class="$style.navbar" />
     <main :class="$style.main">
       <Sidebar />
@@ -22,20 +22,27 @@
 </template>
 
 <script setup lang="ts">
+import { watch } from 'vue'
 import Navbar from 'widgets/Navbar'
 import Sidebar from 'widgets/Sidebar'
-import AppLoader from 'shared/ui/AppLoader'
+import { AppLoader } from 'shared/ui'
 import { useTheme } from 'shared/composables'
 import ErrorBoundary from './providers/ErrorBoundary'
 import './styles/index.scss'
 
 const { theme } = useTheme()
+
+watch(theme, (value, oldValue) => {
+  document.body.classList.remove(oldValue)
+  document.body.classList.add(value)
+}, { immediate: true })
 </script>
 
 <style lang="scss" module>
 .app {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .main {
