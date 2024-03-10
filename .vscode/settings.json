@@ -82,5 +82,6 @@
     "revealOn": "run",
     "revealWithFocus": "none",
     "clearOnRun": "none"
-  }
+  },
+  "jest.jestCommandLine": "npx jest --config ./config/jest/jest.config.ts"
 }
