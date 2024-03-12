@@ -20,7 +20,7 @@ export const Base: Story = {
         <div style="padding: 20px; flex-grow: 1;">
           <AboutPage />
         </div>
-      <div />`,
+      </div>`,
     }
   },
 }

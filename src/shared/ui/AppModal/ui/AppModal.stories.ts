@@ -23,7 +23,7 @@ export const Base: Story = {
         return { args }
       },
       template: `
-      <body style="light" style="height: 50vh;">
+      <body class="light" style="height: 50vh;">
         <AppModal v-bind="args">{{args.default}}</AppModal>
       </body>`,
     }
