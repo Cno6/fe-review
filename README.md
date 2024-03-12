@@ -34,13 +34,11 @@
 
 ## TODO:
 1. Локализация:
-  1. Попробовать [typesafe-i18n](https://github.com/ivanhofer/typesafe-i18n/tree/main/packages/adapter-vue) вместо `vue i18n`.
-  2. Lazy loading файлов локализации разбитых на чанки по языку и модулям.
-  3. eslint-plugin-vue-i18n
+    1. Попробовать [typesafe-i18n](https://github.com/ivanhofer/typesafe-i18n/tree/main/packages/adapter-vue) вместо `vue i18n`.
+    2. Lazy loading файлов локализации разбитых на чанки по языку и модулям.
+    3. eslint-plugin-vue-i18n
 2. Текстирование
-  1. Разобраться как правильно мокать переводы
+    1. Разобраться как правильно мокать переводы
 3. Typescript
-  1. Детальнее изучить правильную работу Vue 3 с Typescript
-  2. Вернуть `"noImplicitAny": true` в `tsconfig` и разобраться с проблемой типа any в динамическом компоненте в `App.vue`
-4. Storybook:
-  1. Подумать как сделать так, чтобы `Sidebar` соответствовал внешнему представлению на странице (*предположительно завести лайауты и использовать их в сторис*).
+    1. Детальнее изучить правильную работу Vue 3 с Typescript
+    2. Вернуть `"noImplicitAny": true` в `tsconfig` и разобраться с проблемой типа any в динамическом компоненте в `App.vue`
