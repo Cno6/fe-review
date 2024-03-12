@@ -12,13 +12,15 @@ export interface AppLinkTheme {
   SECONDARY: 'secondary'
 }
 
-export interface AppLinkProps extends RouterLinkProps {
+export interface AppLinkProps extends /* @vue-ignore */ RouterLinkProps {
   theme?: AppLinkTheme[keyof AppLinkTheme]
 }
 
-const $props = defineProps<AppLinkProps>()
+const $props = withDefaults(defineProps<AppLinkProps>(), {
+  theme: 'primary',
+})
 
-const theme = $props.theme ?? 'primary'
+const theme = $props.theme
 </script>
 
 <style lang="scss" module>
