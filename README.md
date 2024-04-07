@@ -16,6 +16,7 @@
   - Vue 3
   - Vue Router
   - Vue i18n
+  - Pinia
 - **CSS**:
   - CSS Modules
   - Sass (Scss)
@@ -30,6 +31,9 @@
   - UI: Loki + Storybook
 - **Архитектура**:
   - Feature-Sliced Design
+- **Backend**:
+  - json-server
+- **CI/CD**:
   - Github Actions (CI)
 
 ## TODO:
