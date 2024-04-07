@@ -1,5 +1,5 @@
 import { count } from './state'
 
-export function increment() {
-  count.value++
+export function increment(value: number = 1) {
+  count.value += value
 }

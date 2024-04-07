@@ -1,6 +1,5 @@
 import createComponent from 'shared/helpers/tests/createComponent'
 import type { VueWrapper } from '@vue/test-utils'
-import { nextTick } from 'vue'
 import AppModal from './AppModal.vue'
 
 describe('test AppModal', () => {
