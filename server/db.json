@@ -1,0 +1,23 @@
+{
+  "posts": [
+    { "id": 1, "title": "a first", "views": 100 },
+    { "id": 2, "title": "a second", "views": 200 },
+    { "id": 3, "title": "a third", "views": 200 },
+    { "id": 4, "title": "a fourth", "views": 200 },
+    { "id": 5, "title": "a fifth", "views": 200 }
+  ],
+  "comments": [
+    { "id": 1, "text": "a comment about post 1", "postId": "1" },
+    { "id": 2, "text": "another comment about post 1", "postId": "1" }
+  ],
+  "users": [
+    { "id": 1, "login": "user1", "password": "user1" },
+    { "id": 2, "login": "user2", "password": "user2" },
+    { "id": 3, "login": "user3", "password": "user3" },
+    { "id": 4, "login": "user4", "password": "user4" },
+    { "id": 5, "login": "user5", "password": "user5" }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
