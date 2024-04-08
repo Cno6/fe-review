@@ -1,10 +1,8 @@
 <template>
   <header :class="$style.navbar">
-    <Teleport to="body">
-      <AppModal ref="authModal">
-        Попап входа
-      </AppModal>
-    </Teleport>
+    <LoginModal ref="loginModal">
+      Попап входа
+    </LoginModal>
     <nav :class="$style.links">
       <AppLink to="/">
         {{ $t('home') }}
@@ -14,19 +12,20 @@
       </AppLink>
     </nav>
     <AppButton theme="primary" @click="openModal">
-      Войти
+      {{ $t('sign-in') }}
     </AppButton>
   </header>
 </template>
 
 <script setup lang="ts">
-import { AppButton, AppLink, AppModal } from 'shared/ui'
+import { AppButton, AppLink } from 'shared/ui'
+import { LoginModal } from 'features/AuthByUsername'
 import { ref } from 'vue'
 
-const authModal = ref<typeof AppModal>()
+const loginModal = ref<typeof LoginModal>()
 
 function openModal() {
-  authModal.value.openModal()
+  loginModal.value.openLoginModal()
 }
 </script>
 

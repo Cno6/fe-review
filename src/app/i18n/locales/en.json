@@ -5,5 +5,6 @@
   "home": "Home",
   "toggle": "Switch",
   "error-boundary": "An error has occurred",
-  "reload-page": "Refresh the page"
+  "reload-page": "Refresh the page",
+  "sign-in": "Sign In"
 }

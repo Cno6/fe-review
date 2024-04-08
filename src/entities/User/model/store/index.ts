@@ -4,7 +4,7 @@ import * as state from './state'
 import * as getters from './getters'
 import * as actions from './actions'
 
-export const useCounterStore = defineStore('counter', () => ({
+export const useUserStore = defineStore('user', () => ({
   ...state,
   ...getters,
   ...actions,

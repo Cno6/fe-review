@@ -1,11 +1,13 @@
 <template>
-  <div :class="[$style.app_modal, { [$style.opened]: isOpen }]">
-    <div :class="$style.overlay" @click.self="persistCloseHandler">
-      <div :class="$style.content">
-        <slot />
+  <Teleport to="body">
+    <div :class="[$style.app_modal, { [$style.opened]: isOpen }]">
+      <div :class="$style.overlay" @click.self="persistCloseHandler">
+        <div :class="$style.content">
+          <slot />
+        </div>
       </div>
     </div>
-  </div>
+  </Teleport>
 </template>
 
 <script lang="ts" setup>
